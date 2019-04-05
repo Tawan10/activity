@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+header("Access-Control-Allow-Origin: *");
 class Home extends CI_Controller {
 
 	/**
@@ -19,6 +19,10 @@ class Home extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
+	{
+        $this->load->view('homepage');
+	}
+	public function gotologin()
 	{
         $this->load->view('login');
     }

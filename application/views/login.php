@@ -37,7 +37,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a href="http://bit.ly/2HKy0Mv">Download Best Wordpress Theme</a>
+            
         </div>
     </div>
 </div>
