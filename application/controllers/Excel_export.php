@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+header("Access-Control-Allow-Origin: *");
 class Excel_export extends CI_Controller {
 	
 	function index()

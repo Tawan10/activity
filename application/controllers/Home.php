@@ -22,13 +22,16 @@ class Home extends CI_Controller {
 	{
         $this->load->view('homepage');
     }
-    // public function import()
-    // {
-
-    // }
-    // public function export()
-    // {
-
-    // }
-
+	public function login()
+	{
+        $this->load->view('login');
+	}
+	public function dashboard()
+	{
+        $this->load->view('dashboard');
+	}
+	public function certificate()
+	{
+        $this->load->view('certificate');
+    }
 }
