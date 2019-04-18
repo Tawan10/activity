@@ -28,10 +28,19 @@ class Home extends CI_Controller {
 	}
 	public function dashboard()
 	{
-        $this->load->view('dashboard');
+	$this->load->view('dashboard');
+	$this->load->view('table.php');
 	}
+	public function studentdata()
+	{
+	$this->load->view('dashboard');
+	$this->load->view('table.php');
+	}
+	
+
 	public function certificate()
 	{
-        $this->load->view('certificate');
+	$this->load->view('dashboard');	
+    $this->load->view('certificate');
     }
 }
