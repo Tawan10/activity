@@ -14,13 +14,13 @@
 
         <div class="box1">
             <div class="wrapper-img">
-                <img src="<?php echo base_url();?>img/cer2.jpeg" >
+                <img src="<?php echo base_url();?>assets/img/cer2.jpeg" >
             
             </div>
         </div>
         <div class="box1">
             <div class="wrapper-img">
-                <img src="<?php echo base_url();?>img/cer2.jpeg" >
+                <img src="<?php echo base_url();?>assets/img/cer2.jpeg" >
             
             </div>
         </div>

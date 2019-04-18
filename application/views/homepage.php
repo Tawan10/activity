@@ -58,7 +58,7 @@
               <div class="banner-middle">
                         <div class="container">
                                 <div class="banner-middle-image">
-                                        <img src="#" alt="" >
+                                        <img src="<?php echo base_url();?>assets/img/test5.png" alt="" >
                                 </div>
                         </div>
               </div>
@@ -69,7 +69,27 @@
            
                         <div class="card-board col-md-3 nopadding">
                                 <div class="img-in-board">
-                                        <img src="<?php echo base_url();?>assets/img/hp_01.jpg" alt="">
+                                        <img src="<?php echo base_url();?>assets/img/test1.jpg" alt="">
+                                </div>
+                                
+                                <div class="padding-card-board">
+                                                <div class="time-in-board">2018/12/06</div>             
+                                                <div class="head-in-board">
+                                                        <h1 class="h1-text-in-head">
+                                                                กิจกรรมการท่องเที่ยว
+                                                        </h1>
+                                                </div>
+                                                <div class="content-in-board">
+                                                        <p class="text-in-content">
+                                                            ท่องเที่ยวเชิงอนุรักษ์รักษาป่าให้อยู่ตลอดไปร่วมกันทำงานเป็นหมู่คณะด้วยคณะรักษาพันธุ์สัตว์ป่าร่วมกันกกตมาเที่ยวชมการทำงานของนักศึกษา
+                                                        </p>
+                                                </div>
+                                                <a href="#""><div class="see-more-in-board">อ่านต่อ</div></a>
+                                </div>                
+                        </div> 
+                        <div class="card-board col-md-3 nopadding">
+                                <div class="img-in-board">
+                                        <img src="<?php echo base_url();?>assets/img/test2.jpg" alt="">
                                 </div>
                                 
                                 <div class="padding-card-board">
