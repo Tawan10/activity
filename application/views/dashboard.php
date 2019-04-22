@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard 2</title>
+    <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url();?>assets/css/font-face.css" rel="stylesheet" media="all">
@@ -71,8 +71,12 @@
                                             <i class="fas fa-shopping-basket"></i>ข้อมูลนักศึกษา</a>
                                 </li>
                                 <li>
-                                            <a href="#">
+                                            <a href="<?php echo base_url()?>home/activityselect">
                                                 <i class="fas fa-shopping-basket"></i>กิจกรรม</a>
+								</li>
+								<li>
+                                            <a href="<?php echo base_url()?>excel_import">
+                                                <i class="fas fa-shopping-basket"></i>นำเข้าผู้ใช้งาน</a>
                                 </li>
                        
                        
@@ -139,16 +143,6 @@
                 
             </header>
             <!-- END HEADER DESKTOP-->
-
-         
-
-           
-
-           
-
-          
-
-           
         </div>
 
     </div>

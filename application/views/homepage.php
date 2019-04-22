@@ -27,7 +27,7 @@
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">SWE</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,7 +38,7 @@
                       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Calender</a>
+                      <a class="nav-link" href="<?php echo base_url()?>home/calendar">Calender</a>
                     </li>
       
                   </ul>
@@ -66,49 +66,33 @@
     <div class="container">
                 <h2>กิจกรรม</h1>
             <div class="row">
-           
-                        <div class="card-board col-md-3 nopadding">
-                                <div class="img-in-board">
-                                        <img src="<?php echo base_url();?>assets/img/test1.jpg" alt="">
-                                </div>
-                                
-                                <div class="padding-card-board">
-                                                <div class="time-in-board">2018/12/06</div>             
-                                                <div class="head-in-board">
-                                                        <h1 class="h1-text-in-head">
-                                                                กิจกรรมการท่องเที่ยว
-                                                        </h1>
-                                                </div>
-                                                <div class="content-in-board">
-                                                        <p class="text-in-content">
-                                                            ท่องเที่ยวเชิงอนุรักษ์รักษาป่าให้อยู่ตลอดไปร่วมกันทำงานเป็นหมู่คณะด้วยคณะรักษาพันธุ์สัตว์ป่าร่วมกันกกตมาเที่ยวชมการทำงานของนักศึกษา
-                                                        </p>
-                                                </div>
-                                                <a href="#""><div class="see-more-in-board">อ่านต่อ</div></a>
-                                </div>                
-                        </div> 
-                        <div class="card-board col-md-3 nopadding">
-                                <div class="img-in-board">
-                                        <img src="<?php echo base_url();?>assets/img/test2.jpg" alt="">
-                                </div>
-                                
-                                <div class="padding-card-board">
-                                                <div class="time-in-board">2018/12/06</div>             
-                                                <div class="head-in-board">
-                                                        <h1 class="h1-text-in-head">
-                                                                กิจกรรมการท่องเที่ยว
-                                                        </h1>
-                                                </div>
-                                                <div class="content-in-board">
-                                                        <p class="text-in-content">
-                                                            ท่องเที่ยวเชิงอนุรักษ์รักษาป่าให้อยู่ตลอดไปร่วมกันทำงานเป็นหมู่คณะด้วยคณะรักษาพันธุ์สัตว์ป่าร่วมกันกกตมาเที่ยวชมการทำงานของนักศึกษา
-                                                        </p>
-                                                </div>
-                                                <a href="#""><div class="see-more-in-board">อ่านต่อ</div></a>
-                                </div>                
-                        </div> 
-           
-            </div>
+	    	<?php
+			foreach ($data_result->result() as $row)
+			{
+				echo "<div class="."card-board col-md-3 nopadding".">";
+                                echo "<div class="."img-in-board".">";
+					echo "<img src=".base_url().$row->image.">";
+				echo "</div>";
+                                echo "<div class="."padding-card-board".">";
+                                                echo "<div class="."time-in-board".">".$row->create_at."</div>";             
+                                                echo "<div class="."head-in-board".">";
+                                                        echo "<h1 class="."h1-text-in-head".">"
+                                                        .$row->name;
+                                                        echo "</h1>";
+                                                echo "</div>";
+                                                echo "<div class="."content-in-board".">";
+                                                        echo "<p class="."text-in-content".">"
+                                                            .$row->description;
+                                                        echo "</p>";
+                                                echo "</div>";
+                                                echo "<a href="."#"."><div class="."see-more-in-board".">อ่านต่อ</div></a>";
+                                echo "</div>";                
+                        echo "</div>";         
+			}
+		
+                        
+	    echo "</div>";
+	    ?>
          
     </div>
 

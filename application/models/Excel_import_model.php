@@ -3,7 +3,7 @@ class Excel_import_model extends CI_Model
 {
 	function select()
 	{
-		$this->db->order_by('CustomerID', 'DESC');
+		$this->db->order_by('ID', 'DESC');
 		$query = $this->db->get('tbl_customer');
 		return $query;
 	}

@@ -11,36 +11,35 @@ class Excel_import extends CI_Controller
 
 	function index()
 	{
-    $this->load->view('excel_import');
+	$this->load->view('dashboard');
+	$this->load->view('excel_import');
 	}
 	
 	function fetch()
 	{
 		$data = $this->excel_import_model->select();
 		$output = '
-		<h3 align="center">Total Data - '.$data->num_rows().'</h3>
-		<table class="table table-striped table-bordered">
+		
+		<div class="table-responsive table--no-card m-b-30">
+		<table class= "table table-borderless table-striped table-earning">
 			<tr>
-				<th>Customer Name</th>
-				<th>Address</th>
-				<th>City</th>
-				<th>Postal Code</th>
-				<th>Country</th>
+				<th>ชื่อสกุล</th>
+				<th>อีเมลล์</th>
+				<th>โทรศัพท์</th>
 			</tr>
 		';
 		foreach($data->result() as $row)
 		{
 			$output .= '
 			<tr>
-				<td>'.$row->CustomerName.'</td>
-				<td>'.$row->Address.'</td>
-				<td>'.$row->City.'</td>
-				<td>'.$row->PostalCode.'</td>
-				<td>'.$row->Country.'</td>
+				
+				<td>'.$row->studentName.'</td>
+				<td>'.$row->email.'</td>
+				<td>'.$row->tel.'</td>
 			</tr>
 			';
 		}
-		$output .= '</table>';
+		$output .= '</table>'.'</div>';
 		echo $output;
 	}
 
@@ -56,17 +55,17 @@ class Excel_import extends CI_Controller
 				$highestColumn = $worksheet->getHighestColumn();
 				for($row=2; $row<=$highestRow; $row++)
 				{
-					$customer_name = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
-					$address = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-					$city = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
-					$postal_code = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
-					$country = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+					$studentID = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
+					$studentName = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+					$year = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+					$email = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+					$tel = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
 					$data[] = array(
-						'CustomerName'		=>	$customer_name,
-						'Address'			=>	$address,
-						'City'				=>	$city,
-						'PostalCode'		=>	$postal_code,
-						'Country'			=>	$country
+						'studentID'		=>	$studentID,
+						'studentName'			=>	$studentName,
+						'year'				=>	$year,
+						'email'		=>	$email,
+						'tel'			=>	$tel 
 					);
 				}
 			}

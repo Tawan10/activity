@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<!-- << table >> -->
-            
+    <meta name="viewport" content="width=<!-- << table >> -->">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 mar-top">
+						<div class="row form-group">
+                            </div>
                         <div class="table-responsive table--no-card m-b-30">
                             <table class="table table-borderless table-striped table-earning">
                                 <thead>

@@ -6,8 +6,9 @@ class Excel_export extends CI_Controller {
 	function index()
 	{
 		$this->load->model("excel_export_model");
-		$data["employee_data"] = $this->excel_export_model->fetch_data();
-		$this->load->view("excel_export_view", $data);
+		$data["data_result"] = $this->excel_export_model->fetch_data();
+		$this->load->view('dashboard');
+		$this->load->view('students',$data);
 	}
 
 	function action()
@@ -18,7 +19,7 @@ class Excel_export extends CI_Controller {
 
 		$object->setActiveSheetIndex(0);
 
-		$table_columns = array("CustomerName", "Address", "City", "PostalCode", "Country");
+		$table_columns = array("studentID", "studentName", "year", "email", "tel");
 
 		$column = 0;
 
@@ -34,11 +35,11 @@ class Excel_export extends CI_Controller {
 
 		foreach($employee_data as $row)
 		{
-			$object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->CustomerName);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->Address);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->City);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->PostalCode);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->Country);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->studentID);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->StudentName);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->year);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->email);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->tel);
 			$excel_row++;
 		}
 
