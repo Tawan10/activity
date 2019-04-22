@@ -39,6 +39,7 @@
                                 <label for="select" class=" form-control-label">ปีการศึกษา</label>
                             </div>
                                 <div class="col-12 col-md-9">
+								<form method="post" action="<?php echo base_url(); ?>home/calendar">
                                     <select name="select" id="select" class="form-control">
                                         <option value="0">Please select</option>
 										<?php
@@ -47,34 +48,10 @@
 											echo "<option value=".$row->year.">".$row->year."/".$row->sector."</option>";
 										}
 										?>
-                                    </select>
+									</select>
                                 </div>
                             </div>
-                        <div class="table-responsive table--no-card m-b-30">
-                            <table class="table table-borderless table-striped table-earning">
-                                <thead>
-                                    <tr>
-                                        <th>ชื่อกิจกรรม</th>
-                                        <th>วันที่เริ่มต้นกิจกรรม</th>
-                                        <th>วันที่สิ้นสุดกิจกรรม</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-								<?php
-									foreach ($data_result2->result() as $row)
-									{
-									echo "<tr>";
-                                    echo "<td>".$row->name."</td>";
-                                    echo "<td>".$row->startDate."</td>";
-                                    echo "<td>".$row->endDate."</td>"   ;
-                                    echo "</tr>";		
-									}
-								?>
-                                </tbody>
-							</table>
-						</div>
-						<form method="post" action="<?php echo base_url(); ?>home">
-							<input type="submit" name="home" class="btn btn-success" value="Home" />
+							<input type="submit" name="home" class="btn btn-success" value="ค้นหา" />
 						</form>
                     </div>
                 </div>

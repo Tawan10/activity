@@ -38,7 +38,7 @@
                       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="<?php echo base_url()?>home/calendar">Calender</a>
+                      <a class="nav-link" href="<?php echo base_url()?>home/calendar_select">Calender</a>
                     </li>
       
                   </ul>

@@ -9,7 +9,7 @@ class Fecth_activity extends CI_Model
 	}
 	function select_where($year)
 	{
-		var_dump($year);
+		// var_dump($year);
 		$this->db->order_by('id', 'DESC');
 		$sql = "SELECT * FROM activity WHERE year = $year ";
 		$query = $this->db->query($sql);

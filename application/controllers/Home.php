@@ -64,13 +64,19 @@ class Home extends CI_Controller {
 	$this->load->view('dashboard');	
     $this->load->view('certificate');
 	}
-	public function calendar()
+	public function calendar_select()
 	{
 	$this->load->model('fecth_term');
-	$this->load->model('fecth_activity');
 	$resutl_term = $this->fecth_term->select();
-	$result_activity = $this->fecth_activity->select();
-	$data=array("data_result"=>$resutl_term,"data_result2"=>$result_activity);
+	$data=array("data_result"=>$resutl_term);
 	$this->load->view('calendar',$data);
+	}
+	public function calendar()
+	{
+		$select=(isset($_POST["select"])?$_POST["select"]:"");
+		$this->load->model('fecth_activity');
+		$resutl_activity= $this->fecth_activity->select_where($select);
+		$data=array("data_result"=>$resutl_activity);
+		$this->load->view('activity',$data);
 	}
 }
