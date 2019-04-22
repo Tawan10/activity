@@ -61,8 +61,20 @@ class Home extends CI_Controller {
 	}
 	public function certificate()
 	{
+	$select=(isset($_POST["select"])?$_POST["select"]:"");
+	$this->load->model('fecth_activity');
+	$resutl_activity= $this->fecth_activity->select_where($select);
+	$data=array("data_result"=>$resutl_activity);
 	$this->load->view('dashboard');	
-    $this->load->view('certificate');
+	$this->load->view('activity',$data);
+	}
+	public function certificate_select()
+	{
+	$this->load->model('fecth_activity');
+	$resutl_activity = $this->fecth_activity->select();
+	$data=array("data_result"=>$resutl_activity);
+	$this->load->view('dashboard');	
+	$this->load->view('list_certificate',$data);
 	}
 	public function calendar_select()
 	{

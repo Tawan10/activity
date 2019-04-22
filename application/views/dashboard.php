@@ -63,7 +63,7 @@
                                 </li>
                        
                                 <li>
-                                    <a href="<?php echo base_url()?>home/certificate">
+                                    <a href="<?php echo base_url()?>home/certificate_select">
                                         <i class="fas fa-shopping-basket"></i>เกียรติบัตร</a>
                                 </li>
                                 <li>
