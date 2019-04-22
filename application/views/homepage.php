@@ -69,34 +69,31 @@
 	    	<?php
 			foreach ($data_result->result() as $row)
 			{
-				echo "<div class="."card-board col-md-3 nopadding".">";
-                                echo "<div class="."img-in-board".">";
-					echo "<img src=".base_url().$row->image.">";
-				echo "</div>";
-                                echo "<div class="."padding-card-board".">";
-                                                echo "<div class="."time-in-board".">".$row->create_at."</div>";             
-                                                echo "<div class="."head-in-board".">";
-                                                        echo "<h1 class="."h1-text-in-head".">"
-                                                        .$row->name;
-                                                        echo "</h1>";
-                                                echo "</div>";
-                                                echo "<div class="."content-in-board".">";
-                                                        echo "<p class="."text-in-content".">"
-                                                            .$row->description;
-                                                        echo "</p>";
-                                                echo "</div>";
-                                                echo "<a href="."#"."><div class="."see-more-in-board".">อ่านต่อ</div></a>";
-                                echo "</div>";                
-                        echo "</div>";         
-			}
-		
-                        
-	    echo "</div>";
-	    ?>
+		?>
+				<div class="card-board col-md-3 nopadding">
+                                <div class="img-in-board">
+					<img src="<?php base_url();?><?php echo $row->image; ?>">
+				</div>
+                                <div class="padding-card-board">
+                                        <div class="time-in-board"><?php echo $row->create_at;?> </div>          
+                                                <div class="head-in-board">
+                                                	<h1 class="h1-text-in-head">
+                                                        <?php echo $row->name; ?>
+                                                        </h1>
+                                                </div>
+                                                <div class="content-in-board">
+                                                        <p class="text-in-content">
+                                                            <?php echo $row->description;?>
+                                                        </p>
+                                                </div>
+                                                <a href="#"><div class="see-more-in-board">อ่านต่อ</div></a>
+                                </div>                
+                        </div>         
+			<?php } ?>
+
+	    </div>
          
     </div>
-
-
 </body>
 
 
