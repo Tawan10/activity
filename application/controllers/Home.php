@@ -66,7 +66,7 @@ class Home extends CI_Controller {
 	$resutl_activity= $this->fecth_activity->select_where($select);
 	$data=array("data_result"=>$resutl_activity);
 	$this->load->view('dashboard');	
-	$this->load->view('activity',$data);
+	$this->load->view('activity_list',$data);
 	}
 	public function certificate_select()
 	{
