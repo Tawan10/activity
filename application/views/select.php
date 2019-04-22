@@ -36,7 +36,7 @@
                     <div class="col-lg-12 mar-top">
 						<div class="row form-group">
                         	<div class="col col-md-1">
-                                <label for="select" class=" form-control-label">ปีการศึกษา</label>
+                                <label for="select" class=" form-control-label">โปรดเลือก</label>
                             </div>
                                 <div class="col-12 col-md-9">
 									<form method="POST" action="<?php echo site_url('home/activitydata');?>"> 

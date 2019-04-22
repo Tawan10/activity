@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<!-- << table >> -->">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -41,7 +41,7 @@
 							</table>
 						</div>
 						<form method="post" action="<?php echo base_url(); ?>excel_export/action">
-							<input type="submit" name="export" class="btn btn-success" value="Export" />
+							<input type="submit" name="export" class="btn btn-success"  value="Export" />
 						</form>
                     </div>
                 </div>

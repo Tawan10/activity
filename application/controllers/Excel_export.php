@@ -6,7 +6,8 @@ class Excel_export extends CI_Controller {
 	function index()
 	{
 		$this->load->model("excel_export_model");
-		$data["data_result"] = $this->excel_export_model->fetch_data();
+		$result_students = $this->excel_export_model->fetch_data();
+		$data = array("data_result"=>$result_students);
 		$this->load->view('dashboard');
 		$this->load->view('students',$data);
 	}
@@ -29,17 +30,26 @@ class Excel_export extends CI_Controller {
 			$column++;
 		}
 
-		$employee_data = $this->excel_export_model->fetch_data();
+		$result_students = $this->excel_export_model->fetch_data();
+		
 
 		$excel_row = 2;
+		// foreach($result_students as $row)
+		// {
+		// 	echo $row->studentID;
+		// 	echo $row->studentName;
+		// 	echo $row->year;
+		// 	echo $row->email;
+		// 	echo $row->tel;
+		// }
 
-		foreach($employee_data as $row)
+		foreach($result_students as $row)
 		{
-			$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->studentID);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->StudentName);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->year);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->email);
-			$object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->tel);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->studentID);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->studentName);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->year);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->email);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->tel);
 			$excel_row++;
 		}
 
